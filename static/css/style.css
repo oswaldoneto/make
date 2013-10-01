@@ -1,0 +1,47 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size:11px;
+	line-height: 14px;
+	margin:0px;
+}
+
+.content {
+	padding-top: 70px;
+	width: 962px;
+	margin: 0 auto;
+}
+
+
+.box {
+	background-color:#ff4499;
+	-moz-border-radius:3px;
+  	-khtml-border-radius: 3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-webkit-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+   	-moz-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+    -ms-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+    -o-transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+	transition: all 300ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  	-webkit-transition-property: left, right, top;
+    -moz-transition-property: left, right, top;
+    -ms-transition-property: left, right, top;
+    -o-transition-property: left, right, top;
+	transition-property: left, right, top;
+}
+			
+
+.size11, .size12, .size13 { 
+	background: #fffafa;
+}
+.size21, .size22, .size23 { 
+	background: #eee9e9;
+}
+.size31, .size32, .size33 {
+	background: #cdc9c9;
+}
