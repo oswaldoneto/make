@@ -4,6 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 from mh import settings
+from campaign.views import CampaignView
 
 admin.autodiscover()
 
@@ -12,8 +13,7 @@ urlpatterns = patterns('',
         template_name="home.html"
     )),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    (r'^campaign/(?P<campaign>\d+)$',CampaignView.as_view()),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

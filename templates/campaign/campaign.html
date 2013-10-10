@@ -38,13 +38,44 @@
 
 
 	<div class="content">
-
         <div id="container">
-          <div class="box size11">1</div>
-          <div class="box size21">2</div>
-          <div class="box size32">3</div>
-        </div>
+            {% for opportunity in object_list %}
+                <div class="box size55">
 
+
+
+                    <div class="box-top" style="background-image: url({{STATIC_URL}}/background/cities-at-night.jpg);">
+                        <h1 class="ui header" style="color: white; padding: 20px;">
+                            {{ opportunity.title }}
+                        </h1>
+                        <h2 style="color: white; padding: 20px;">{{ opportunity.description }}</h2>
+                    </div>
+
+                    <div class="box-footer">
+
+                        <div class="two-column-1">
+                            <i class="large user icon"></i>Programador
+                        </div>
+                        <div class="two-column-2">
+                            <i class="large briefcase icon"></i>{{ opportunity.skill }}
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="two-column-1">
+                            <i class="large time icon"></i>40 horas
+                        </div>
+                        <div class="two-column-2">
+                            <i class="large calendar icon"></i>Dezembro 2013
+                        </div>
+                        <div class="clear"></div>
+
+                    </div>
+
+
+
+                </div>
+            {% endfor %}
+        </div>
 	</div>
 
 
@@ -52,7 +83,7 @@
 
       $(function() {
 
-        $('#container').nested();
+        $('#container').nested({gutter: 10, resizeToFit: true, resizeToFitOptions: { resizeAny: true }});
 
       });
 

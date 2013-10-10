@@ -14,11 +14,11 @@ body {
 	padding-top: 70px;
 	width: 962px;
 	margin: 0 auto;
+    border: solid 1px blue;
 }
 
 
 .box {
-	background-color:#ff4499;
 	-moz-border-radius:3px;
   	-khtml-border-radius: 3px;
 	-webkit-border-radius:3px;
@@ -34,14 +34,47 @@ body {
     -o-transition-property: left, right, top;
 	transition-property: left, right, top;
 }
+
+.box-top {
+    min-height: 100%;
+}
+
+.box-footer {
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	bottom: 0;
+    /* remove */
+    border: solid 1px black;
+    background-color: yellow;
+}
 			
 
 .size11, .size12, .size13 { 
-	background: #fffafa;
 }
 .size21, .size22, .size23 { 
-	background: #eee9e9;
 }
 .size31, .size32, .size33 {
-	background: #cdc9c9;
+}
+
+
+.two-column-1 {
+    float: left;
+    width: 50%;
+    padding-top: 5px;
+    font-weight: bold;
+}
+.two-column-2 {
+    margin-left: 50%;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.clear {
+    clear: both;
 }
