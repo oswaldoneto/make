@@ -4,7 +4,13 @@
 <head>
     <title>Make History</title>
 	<link href="{{STATIC_URL}}semantic-ui/uncompressed/collections/menu.css" rel="stylesheet" type="text/css" >
-  	<link href="{{STATIC_URL}}semantic-ui/uncompressed/elements/icon.css" rel="stylesheet" type="text/css" >    <link rel='stylesheet' href='{{STATIC_URL}}/css/style.css' media='screen' />
+  	<link href="{{STATIC_URL}}semantic-ui/uncompressed/elements/icon.css" rel="stylesheet" type="text/css" >
+  	<link href="{{STATIC_URL}}semantic-ui/uncompressed/elements/label.css" rel="stylesheet" type="text/css" >
+  	<link href="{{STATIC_URL}}semantic-ui/uncompressed/elements/button.css" rel="stylesheet" type="text/css" >
+  	<link href="{{STATIC_URL}}semantic-ui/uncompressed/elements/progress.css" rel="stylesheet" type="text/css" >
+    <link rel='stylesheet' href='{{STATIC_URL}}/css/style.css' media='screen' />
+
+
     <script src="{{STATIC_URL}}/jquery/jquery-1.7.1.min.js"></script>
     <script src="{{STATIC_URL}}/jquery/blocksit.min.js"></script>
     <link rel="shortcut icon" href="{{STATIC_URL}}/images/favicon.ico" />
@@ -69,6 +75,22 @@
 
             {% for opportunity in object_list %}
                 <div class="grid">
+
+
+                    {% if opportunity.state == "NW" %}
+                        <div class="ui green left corner large label">
+                            <div class="text">New</div>
+                        </div>
+                    {% endif %}
+
+                    {% if opportunity.state == "RN" %}
+                        <div class="state">
+                            <div class="ui purple ribbon label">Running</div>
+                        </div>
+                    {% endif %}
+
+
+
                     <div class="imgholder">
                         <img src="{{ opportunity.image }}" />
                     </div>
@@ -108,8 +130,22 @@
                            {% for maker in opportunity.makers.all %}
                                 <div class="profile-photo" style="background: url('https://lh6.googleusercontent.com/-LMIcEDU_W5s/AAAAAAAAAAI/AAAAAAAAAAA/jLQzGxwCWmM/s96-c/photo.jpg');"></div>
                                 <div class="profile-name">{{ maker.first_name }}&nbsp;{{ maker.last_name }}</div>
+                               <div class="clearfix"></div>
                            {% endfor %}
                     </div>
+
+
+                    {% if opportunity.state == "NW" %}
+                        <div class="apply">
+                            <a class="tiny ui green button">Apply for this</a>
+                        </div>
+                    {% endif %}
+
+                    {% if opportunity.state == "RN" %}
+                        <div class="ui purple progress">
+                          <div class="bar" style="width: 60%;"></div>
+                        </div>
+                    {% endif %}
 
 
                     <!--

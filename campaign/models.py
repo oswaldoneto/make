@@ -14,8 +14,14 @@ class Campaign(models.Model):
 
 class Challenge(models.Model):
     AVAILABILITY_CHOICES = (
-        ('FL','Freelance'),
-        ('FT','Full-time'),
+        ('FL', 'Freelance'),
+        ('FT', 'Full-time'),
+    )
+    STATE_CHOICES = (
+        ('NW', 'New'),
+        ('RN', 'Running'),
+        ('FD', 'Finished'),
+        ('CD', 'Canceled'),
     )
     title = models.CharField(max_length=30)
     description = models.TextField()
@@ -28,6 +34,7 @@ class Challenge(models.Model):
     reward = models.CharField(max_length=50, blank=True)
     availability = models.CharField(max_length=2, choices=AVAILABILITY_CHOICES)
     makers = models.ManyToManyField(User)
+    state = models.CharField(max_length=2, choices=STATE_CHOICES)
 
     def __unicode__(self):
         return self.title
