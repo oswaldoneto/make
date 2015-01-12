@@ -17,6 +17,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': '/Users/oswaldo/work/mh/mh.db',
+        #'NAME': '/srv/make/app/mh/mh.db',
     }
 }
 
@@ -75,6 +76,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     STATIC_DOC_ROOT,
     '/Users/oswaldo/work/mh/static',
+    '/srv/make/app/mh/static',
 )
 
 # List of finder classes that know how to find static files in
@@ -95,6 +97,15 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+    'django.core.context_processors.request',
+    'django.core.context_processors.static',
+    'social.apps.django_app.context_processors.backends',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -104,6 +115,14 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GoogleOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_ENABLED_BACKENDS = ('google')
+
 
 ROOT_URLCONF = 'mh.urls'
 
@@ -123,9 +142,21 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'south',
     'campaign',
+    'explorer',
+    'social.apps.django_app.default',
 )
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/campaign/1/'
+URL_PATH = ''
+SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
+SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'
+SOCIAL_AUTH_GOOGLE_OAUTH_SCOPE = [
+    'https://www.googleapis.com/auth/drive',
+    'https://www.googleapis.com/auth/userinfo.profile'
+]
+
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 

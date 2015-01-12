@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+
+{% block script %}
+    <script src="{{STATIC_URL}}app/campaign/campaign-list.js" defer></script>
+{% endblock %}
+
+{% block content %}
+    <table  class="ui large table segment">
+        <thead>
+            <tr>
+                <th>Campaign</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for campaign in object_list %}
+            <tr>
+                <td>
+				    <a rel="uic_item_link" href="{{campaign.id}}">{{campaign.name}}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                    <div class="ui blue labeled icon button"><i class="user icon"></i> Create Campaign</div>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
+
+
+
+

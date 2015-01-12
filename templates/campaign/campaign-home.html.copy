@@ -1,0 +1,140 @@
+{% extends "base/base.html" %}
+
+{% block script %}
+
+    <script>
+        $(document).ready(function() {
+
+            $('#container').BlocksIt({
+                numOfCol: 4,
+                offsetX: 8,
+                offsetY: 8
+            });
+
+
+        });
+
+
+
+    </script>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+    <section id="wrapper">
+        <hgroup>
+            <h2>Construir o Make em 90 Dias</h2>
+            <h3>Imagine uma nova história para sua vida e acredite nela.</h3>
+        </hgroup>
+        <div id="container">
+
+            {% for challenge in object_list %}
+
+
+                <div class="grid">
+
+                    <!-- State -->
+                    {% if challenge.state == "NW" %}
+                        <div class="ui green left corner large label">
+                            <div class="text">New</div>
+                        </div>
+                    {% endif %}
+
+                    {% if challenge.state == "RN" %}
+                        <div class="state">
+                            <div class="ui purple ribbon label">Running</div>
+                        </div>
+                    {% endif %}
+
+                    <!-- Description -->
+                    <a href="/campaign/1/challenge/{{challenge.id}}" >
+                        <div class="imgholder">
+                            <img src="{{ challenge.image }}" />
+                        </div>
+                    </a>
+                    <div>
+                        <strong>{{ challenge.title }}</strong>
+                    </div>
+
+                    <div>
+                        <p>
+                        {{ challenge.description|linebreaks }}
+                        </p>
+                    </div>
+
+                    <!-- Challenge Properties -->
+                    {% if challenge.state == "NW" %}
+                        <div class="properties">
+                            {% if challenge.job_profile %}
+                                <div class="property">
+                                    <i class="large user icon"></i>{{ challenge.job_profile }}
+                                </div>
+                            {% endif %}
+                            {% if challenge.skill_required %}
+                                <div class="property">
+                                    <i class="large briefcase icon"></i>{{ challenge.skill_required }}
+                                </div>
+                            {% endif %}
+                            {% if challenge.job_estimate %}
+                                <div class="property">
+                                    <i class="large time icon"></i>{{ challenge.job_estimate }}
+                                </div>
+                            {% endif %}
+                            {% if challenge.due_date %}
+                                <div class="property">
+                                    <i class="large calendar icon"></i>{{ challenge.due_date }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    <!-- Makers -->
+                    <div class="makers">
+                           {% for maker in challenge.makers.all %}
+                               <img class="circular ui mini image floatl" src="">
+                               <div class="profile-name">{{ maker.first_name }}&nbsp;{{ maker.last_name }}</div>
+                               <div class="clearfix"></div>
+                           {% endfor %}
+                    </div>
+
+
+                    {% if challenge.state == "NW" %}
+                        <div class="apply">
+                            <a class="tiny ui green button">Apply for this</a>
+                        </div>
+                    {% endif %}
+
+                    {% if challenge.state == "RN" %}
+                        <div class="ui purple progress">
+                          <div class="bar" style="width: 60%;"></div>
+                        </div>
+                    {% endif %}
+
+
+                    <!--
+                    <div class="meta">by j osborn</div>
+                    -->
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

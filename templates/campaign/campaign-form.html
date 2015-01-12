@@ -1,0 +1,71 @@
+{% extends "base/base.html" %}
+
+{% block script %}
+    <script src="{{STATIC_URL}}app/campaign/campaign-form.js"></script>
+    <style>
+        ul.errorlist {
+            list-style-type: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <form id="ui-campaign-form" method="post">
+
+        {% csrf_token %}
+
+        <div class="ui error form segment">
+
+            {% if form.errors %}
+            <div class="ui error message">
+                <div class="header">Form Error</div>
+                <div id="form-error">
+                    <p>The operation could not be performed because one or more error(s) occurred.<br />Please resubmit the form after making the changes.</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="{% if form.errors.name %}error{% endif %} field">
+              <label>Campaign Name</label>
+              {{ form.name }}
+              {% if form.errors.name %}
+                  <div class="ui red pointing above ui label">{{form.errors.name.as_text|slice:"2:"}}</div>
+              {% endif %}
+            </div>
+
+            <div class="{% if form.errors.message %}error{% endif %} field">
+              <label>Message</label>
+              {{ form.message }}
+              {% if form.errors.message %}
+                  <div class="ui red pointing above ui label">{{form.errors.message.as_text|slice:"2:"}}</div>
+              {% endif %}
+            </div>
+
+            <div class="two fields">
+
+                <div class="{% if form.errors.start_date %}error{% endif %} field">
+                  <label>Start Date</label>
+                  {{ form.start_date }}
+                  {% if form.errors.start_date %}
+                      <div class="ui red pointing above ui label">{{form.errors.start_date.as_text|slice:"2:"}}</div>
+                  {% endif %}
+                </div>
+
+                <div class="{% if form.errors.end_date %}error{% endif %} field">
+                  <label>End Date</label>
+                  {{ form.end_date }}
+                  {% if form.errors.end_date %}
+                      <div class="ui red pointing above ui label">{{form.errors.end_date.as_text|slice:"2:"}}</div>
+                  {% endif %}
+                </div>
+
+            </div>
+
+            <div id="ui-save-button" class="ui blue submit button">Save</div>
+
+        </div>
+
+    </form>
+
+{% endblock %}

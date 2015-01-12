@@ -1,0 +1,262 @@
+[
+{
+    "pk": 1, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "Desenvolvedor Web Python", 
+        "due_date": "2014-08-08", 
+        "description": "Toda campanha deve ter uma p\u00e1gina home com os desafios da campanha em layout waterfall inspirado no Pintrest.\r\n\r\nA p\u00e1gina deve mostrar o nome e a descri\u00e7\u00e3o da campanha seguido dos desafios. \r\n\r\nO dono da campanha poder\u00e1 selecionar algumas imagens de plano de fundo para a p\u00e1gina da campanha. Tamb\u00e9m ser\u00e1 poss\u00edvel selecionar a cor da fonte do t\u00edtulo e da mensagem da campanha. ", 
+        "campaign": 1, 
+        "title": "Desenvolver P\u00e1gina da Campanha", 
+        "image": "red-megaphone1.jpg", 
+        "skill_required": "Python, Django, HTML, Javascript, CSS", 
+        "availability": "FL", 
+        "makers": [
+            2
+        ], 
+        "state": "RN", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 2, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "Administrador Linux", 
+        "due_date": "2014-08-10", 
+        "description": "Implantar a infraestrutura necess\u00e1ria para executar o Make na n\u00favem p\u00fablica. Incluindo servidores, banco de dados e componentes de terceiros.", 
+        "campaign": 1, 
+        "title": "Publicar o Make na N\u00favem", 
+        "image": "cloudartikel5042514.jpg", 
+        "skill_required": "Linux, Cloud, Amazon", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "RN", 
+        "reward": "", 
+        "job_estimate": "3 horas"
+    }
+},
+{
+    "pk": 3, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "Web Designer", 
+        "due_date": "2014-10-20", 
+        "description": "A Landing Page deve descrever o produto em detalhes para chamar a aten\u00e7\u00e3o do visitante e capturar informa\u00e7\u00f5es a respeito dele e do interesse no Make.\r\n\r\n\r\n", 
+        "campaign": 1, 
+        "title": "Desenhar a Landing Page", 
+        "image": "Future-of-Marketing-Tag-Cloud.jpg", 
+        "skill_required": "HTML, CSS, Javascript", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": "8 horas"
+    }
+},
+{
+    "pk": 4, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "Desenvolvedor Web Python", 
+        "due_date": "2014-08-16", 
+        "description": "O Maker dever\u00e1 ter uma p\u00e1gina para ver todas suas campanhas. A lista dever\u00e1 ser dividida entre campanhas que o Maker \u00e9 dono, e campanhas que ele apenas participa.\r\n\r\nA lista dever\u00e1 ter o nome da campanha, dias restantes para o final, porcentagem do trabalho realizado, total de makers engajados, burn down, notifica\u00e7\u00f5es, a\u00e7\u00f5es requeridas como avalia\u00e7\u00e3o de inscri\u00e7\u00e3o de maker.\r\n\r\n", 
+        "campaign": 1, 
+        "title": "P\u00e1gina de Campanhas do Maker", 
+        "image": "Boy-Image-full-Step-6-Image-2.jpg", 
+        "skill_required": "Python, Django, HTML, Javascript, CSS", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": "6 horas"
+    }
+},
+{
+    "pk": 5, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": "2014-09-24", 
+        "description": "Realizar uma apresenta\u00e7\u00e3o para um grupo de cinco pessoas chave que possam contribuir com feedback construtivo sobre o produto.\r\n\r\nA apresenta\u00e7\u00e3o pode ser presencial ou online com o uso do Hangout.\r\n\r\n", 
+        "campaign": 1, 
+        "title": "Apresentar o Make para 5 pessoas", 
+        "image": "freevector-presentation.jpeg", 
+        "skill_required": "Boa Comunica\u00e7\u00e3o", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": "5 Horas"
+    }
+},
+{
+    "pk": 6, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": "2014-08-04", 
+        "description": "Versionar o c\u00f3digo-fonte no Github e criar os manuais para opera\u00e7\u00f5es de checkin e checkout de c\u00f3digo-fonte.", 
+        "campaign": 1, 
+        "title": "Versionar o Make no GitHub", 
+        "image": "Github.jpg", 
+        "skill_required": "Git", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": "2 Horas"
+    }
+},
+{
+    "pk": 7, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "Cada Desafio ter\u00e1 uma p\u00e1gina pr\u00f3pria, onde ser\u00e1 poss\u00edvel acessar informa\u00e7\u00f5es sobre o Desafio.\r\n\r\nO Desafio deve ter t\u00edtulo, descri\u00e7\u00e3o, imagem, condi\u00e7\u00e3o, progresso, dias restante, Makers que aceitaram o desafio, mensagens, seguidores, etc.\r\n\r\nAtrav\u00e9s da P\u00e1gina do Desafio, os Makers reportar\u00e3o o progresso de suas atividades. O progresso ser\u00e1 medido em porcentagem. O Maker ser\u00e1 incentivado a escrever um texto resumindo que conte a hist\u00f3ria do seu progresso.\r\n\r\nOs dias restantes para o final do Desafio estar\u00e3o sempre evidentes na P\u00e1gina do Desafio. A condi\u00e7\u00e3o do Desafio, ou seja, se \u00e9 novo, em progresso ou conclu\u00eddo, dever\u00e1 ter destaque na p\u00e1gina.\r\n\r\n    \r\n\r\n", 
+        "campaign": 1, 
+        "title": "Desenvolver P\u00e1gina do Desafio", 
+        "image": "Mountain-Man-Banner5.jpg", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 8, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "Novos usu\u00e1rios devem fazer o registro no Make atrav\u00e9s da p\u00e1gina de registro do usu\u00e1rio. Os usu\u00e1rios poder\u00e3o utilizar suas contas em outros sites (Google, Facebook, Linkedin) para criar o registro no Make.\r\n\r\nO registro torna o usu\u00e1rio um Maker, permitindo a ele a participa\u00e7\u00e3o de Campanhas atrav\u00e9s dos Desafios.\r\n\r\nO Maker deve ter nome, sobrenome, e-mail, username, senha e localiza\u00e7\u00e3o.\r\n\r\nO Maker dever\u00e1 ser notificado por e-mail no t\u00e9rmino do registro do usu\u00e1rio. Dever\u00e1 ser enviada uma mensagem de boas vindas e uma breve explic\u00e3o sobre o Make.\r\n\r\n", 
+        "campaign": 1, 
+        "title": "P\u00e1gina para Registrar Usu\u00e1rio", 
+        "image": "biometric3.jpg", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            2
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 9, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "O Maker dever\u00e1 ter uma p\u00e1gina com foto, nome, local. Dever\u00e1 ter tamb\u00e9m as Campanhas que o Maker esta engajado assim como os Desafios.\r\n\r\nO Maker poder\u00e1 seguir ou ser seguido por outros Markers e essas informa\u00e7\u00f5es tamb\u00e9m devem ser mostradas em sua p\u00e1gina.\r\n\r\nA p\u00e1gina deve mostrar alguns n\u00fameros sobre a performance do Maker como: Quantidade de Desafios Conclu\u00eddos, Quantidade de Campanhas que Participou, N\u00famero de Pr\u00eamios Recebidos, etc.  ", 
+        "campaign": 1, 
+        "title": "P\u00e1gina do Perfil do Maker", 
+        "image": "images.jpeg", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            2
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 10, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "Todo Maker deve ser capaz de criar uma Campanha. O Maker que criar a Campanha se torna dono dela, ele poder\u00e1 tornar outros Makers donos da mesma companha. O Maker poder\u00e1 tamb\u00e9m deixar de ser dono da Campanha, desde que haja pelo menos outro dono al\u00e9m dele.\r\n\r\nSomente os donos da Campanha \u00e9 que ter\u00e3o acesso a ela. Somente os donos tem permiss\u00e3o para public\u00e1-la. Publicar uma Campanha significa torna-la acess\u00edvel para todos os Makers e Usu\u00e1rios An\u00f4nimos. \r\n\r\nO Maker dever\u00e1 informar a data do fim da campanha. A campanha deve ter t\u00edtulo, descri\u00e7\u00e3o e uma imagem que ser\u00e1 anexada pelo criador da campanha.\r\n\r\n", 
+        "campaign": 1, 
+        "title": "Desenvolver P\u00e1gina Para Criar Uma Campanha", 
+        "image": "Can-a-Web-Developer-Also-be-a-Web-Designer-1.jpg", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 11, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "O Maker poder\u00e1 fazer a inscri\u00e7\u00e3o para qualquer novo desafio. Para fazer a inscri\u00e7\u00e3o o Maker dever\u00e1 responder uma pergunta direta e objetiva. A pergunta dever\u00e1 ser algo como \"Explique porque voc\u00ea \u00e9 a pessoa mais indicada para o desafio.\"\r\n\r\nAs inscri\u00e7\u00f5es ser\u00e3o submetidas para o(s) dono(s) da Campanha que ter\u00e3o at\u00e9 30 dias para aceitar ou recusar a inscri\u00e7\u00e3o do Maker. Caso a inscri\u00e7\u00e3o n\u00e3o seja avaliada em 30 dias, esta dever\u00e1 ser recusada automaticamente informando o motivo para o usu\u00e1rio.", 
+        "campaign": 1, 
+        "title": "Desenvolver P\u00e1gina Para Inscri\u00e7\u00e3o de Desafio", 
+        "image": "hands-1024x661.jpg", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 12, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "A p\u00e1gina de busca deve permitir a pesquisa por palavra chave no conte\u00fado de Campanhas e Desafios.", 
+        "campaign": 1, 
+        "title": "P\u00e1gina de Busca", 
+        "image": "Blog_Carreiras.jpg", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            2
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+},
+{
+    "pk": 13, 
+    "model": "campaign.challenge", 
+    "fields": {
+        "job_profile": "", 
+        "due_date": null, 
+        "description": "Os Desafios de uma Campanha devem ser criados pelos donos da Campanha.\r\n\r\nO Desafio deve ter t\u00edtulo, descri\u00e7\u00e3o e imagem. O desafio poder\u00e1 ter algumas propriedades como perfil do trabalho, habilidade requerida, data de termino, estimativa do trabalho, recompensa.", 
+        "campaign": 1, 
+        "title": "Desenvolver P\u00e1gina Para Criar Um Desafio", 
+        "image": "Packers-and-Movers-in-Andheri.png", 
+        "skill_required": "", 
+        "availability": "FL", 
+        "makers": [
+            1
+        ], 
+        "state": "NW", 
+        "reward": "", 
+        "job_estimate": ""
+    }
+}
+]

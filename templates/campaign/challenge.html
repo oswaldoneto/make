@@ -1,0 +1,125 @@
+{% extends "base/base.html" %}
+
+{% block style %}
+
+    <style>
+
+        #ui-campaign-img {
+            background-image: url('{{STATIC_URL}}images/campaign/{{challenge.image}}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 280px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function() {
+
+            $(window).load( function() {
+                $('.ui.blocksit').BlocksIt({
+                    numOfCol: 1,
+                    offsetX: 8,
+                    offsetY: 8
+                });
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="ui blocksit">
+        <div class="block">
+
+
+            <div id="ui-campaign-img" class="block-image" style="">
+
+            </div>
+
+
+
+
+            <div class="test">
+            </div>
+
+
+
+
+
+            <div>
+                <h1 class="ui header">{{challenge.title}}</h1>
+                {{challenge.description|linebreaks}}
+            </div>
+
+
+
+
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="ui fluid form">
+                      <div class="field">
+                        <label>Job Profile</label>
+                        <div class="ui left labeled large icon input">
+                          <input type="text" placeholder="" value="{{challenge.job_profile}}">
+                          <i class="user icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label>Skill Required</label>
+                        <div class="ui left labeled large icon input">
+                          <input type="text" placeholder="" value="{{challenge.skill_required}}">
+                          <i class="briefcase icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label>Job Estimate</label>
+                        <div class="ui left labeled large icon input">
+                          <input type="text" placeholder="" value="{{challenge.job_estimate}}">
+                          <i class="time icon"></i>
+                        </div>
+                      </div>
+
+                      <div class="field">
+                        <label>Due Date</label>
+                        <div class="ui left labeled large icon input">
+                          <input type="text" placeholder="" value="{{challenge.due_date}}">
+                          <i class="calendar icon"></i>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="apply">
+                <div class="positive ui button">Apply For This</div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends "base/base.html" %}
+
+{% block script %}
+    <script>
+        $(document).ready(function() {
+
+            //blocksit define
+            $(window).load( function() {
+                $('.ui.blocksit').BlocksIt({
+                    numOfCol: 4,
+                    offsetX: 8,
+                    offsetY: 8
+                });
+            });
+
+            //window resize
+            var currentWidth = 1100;
+            $(window).resize(function() {
+                var winWidth = $(window).width();
+                var conWidth;
+                if(winWidth < 660) {
+                    conWidth = 440;
+                    col = 1
+                } else if(winWidth < 880) {
+                    conWidth = 660;
+                    col = 2
+                } else if(winWidth < 1100) {
+                    conWidth = 880;
+                    col = 3;
+                } else {
+                    conWidth = 1100;
+                    col = 4;
+                }
+
+                if(conWidth != currentWidth) {
+                    currentWidth = conWidth;
+                    $('.ui.blocksit').width(conWidth);
+                    $('.ui.blocksit').BlocksIt({
+                        numOfCol: col,
+                        offsetX: 8,
+                        offsetY: 8
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="ui blocksit">
+
+    {% for challenge in object_list %}
+
+        <!-- Challenge -->
+        <div class="block">
+
+            <!-- State -->
+            {% if challenge.state == "NW" %}
+                <div class="ui left green corner large label">
+                    <div class="text">New</div>
+                </div>
+            {% endif %}
+            {% if challenge.state == "RN" %}
+                <div class="ui left blue corner label">
+                    <i class="loading icon"></i>
+                </div>
+            {% endif %}
+
+            <!-- Image -->
+            <a href="/campaign/1/challenge/{{challenge.id}}" >
+                <div class="block-image" style="background-color: #ffffff">
+                    <img src="{{STATIC_URL}}images/campaign/{{ challenge.image }}" />
+                </div>
+            </a>
+
+            <!-- Title -->
+            <div class="block-title">
+                <strong>{{ challenge.title }}</strong>
+            </div>
+
+            <!-- Description -->
+            <div>
+                <p>
+                {{ challenge.description|linebreaks }}
+                </p>
+            </div>
+
+            <!-- Challenge Properties -->
+            {% if challenge.state == "NW" %}
+                <div class="properties">
+                    {% if challenge.job_profile %}
+                        <div class="property">
+                            <i class="large user icon"></i>{{ challenge.job_profile }}
+                        </div>
+                    {% endif %}
+                    {% if challenge.skill_required %}
+                        <div class="property">
+                            <i class="large briefcase icon"></i>{{ challenge.skill_required }}
+                        </div>
+                    {% endif %}
+                    {% if challenge.job_estimate %}
+                        <div class="property">
+                            <i class="large time icon"></i>{{ challenge.job_estimate }}
+                        </div>
+                    {% endif %}
+                    {% if challenge.due_date %}
+                        <div class="property">
+                            <i class="large calendar icon"></i>{{ challenge.due_date }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <!-- Progress Bar -->
+            {% if challenge.state == "RN" %}
+                <div class="ui blue striped progress">
+                  <div class="bar" style="width: 44%;"></div>
+                </div>
+            {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
